@@ -12,7 +12,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("https://mern-appl-wyiu.onrender.com/api/users/login", {
+    const response = await fetch("https://expert-capybara-gv9gq754rx7hpgv-4000.app.github.dev/api/users/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

@@ -3,21 +3,23 @@ const jwt = require("jsonwebtoken");
 
 const requireAuth = async (req, res, next) => {
   const { authorization } = req.headers;
+  const token = authorization?.split(" ")[1];
 
-  if (!authorization) {
-    res.status(400).json({ error: "Authorization token required" });
+  // If there's no token, return early to avoid continuing to the next block
+  if (!token) {
+    return res.status(400).json({ error: "Authorization token required" });
   }
-
-  const token = authorization.split(" ")[1];
 
   try {
     const { _id } = jwt.verify(token, process.env.SECRET);
 
     req.user = await User.findOne({ _id }).select("_id");
 
+    // Proceed to the next middleware or route handler
     next();
   } catch (error) {
-    res.status(400).json({ error: "Request is not authorized" });
+    // Return early to avoid sending multiple responses
+    return res.status(400).json({ error: "Request is not authorized heheh" });
   }
 };
 

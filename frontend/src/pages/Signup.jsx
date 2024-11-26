@@ -13,7 +13,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("https://mern-appl-wyiu.onrender.com/api/users/signup", {
+    const response = await fetch("https://expert-capybara-gv9gq754rx7hpgv-4000.app.github.dev/api/users/signup", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

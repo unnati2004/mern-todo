@@ -13,7 +13,7 @@ function Home() {
     useEffect(() => {
 
         const fetchTodos = async () => {
-            const response = await fetch("https://mern-appl-wyiu.onrender.com/api/todos", {
+            const response = await fetch("https://expert-capybara-gv9gq754rx7hpgv-4000.app.github.dev/api/todos", {
                 headers: {
                     "Authorization": `Bearer ${user.token}`
                 }
