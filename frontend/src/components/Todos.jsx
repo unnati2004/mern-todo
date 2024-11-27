@@ -6,7 +6,7 @@ import TodosContext from '../context/TodosContext';
 
 function Todos({ todo:t }) {
 
-    const url = "https://expert-capybara-gv9gq754rx7hpgv-4000.app.github.dev/api/todos/"
+    const url = "https://expert-capybara-gv9gq754rx7hpgv-4000.app.github.dev"
     const [edit, setEdit] = useState(false);
     const [todo, setTodo] = useState("");
 
@@ -18,7 +18,7 @@ function Todos({ todo:t }) {
     const { user } = useContext(AuthContext);
 
     const deleteTodo = async () => {
-        const response = await fetch(url+ t._id, {
+        const response = await fetch(`${url}/api/todos/${t._id}`, {
             method: "DELETE",
             headers: {
                 "Authorization": `Bearer ${user.token}`

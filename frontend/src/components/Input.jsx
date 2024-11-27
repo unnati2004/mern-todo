@@ -4,7 +4,7 @@ import TodosContext from '../context/TodosContext';
 
 function Input() {
 
-    const url = "https://expert-capybara-gv9gq754rx7hpgv-4000.app.github.dev/api/todos"
+    const url = "https://expert-capybara-gv9gq754rx7hpgv-4000.app.github.dev"
     const [todo, setTodo] = useState("");
     const input = useRef("");
 
@@ -15,7 +15,7 @@ function Input() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const response = await fetch(url, {
+        const response = await fetch(`${url}/api/todos`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -10,10 +10,11 @@ function Home() {
     const {todos, dispatch} = useContext(TodosContext);
     const { dispatch: Authdispatch, user } = useContext(AuthContext);
 
+    const url = "https://expert-capybara-gv9gq754rx7hpgv-4000.app.github.dev";
     useEffect(() => {
 
         const fetchTodos = async () => {
-            const response = await fetch("https://expert-capybara-gv9gq754rx7hpgv-4000.app.github.dev/api/todos", {
+            const response = await fetch(`${url}/api/todos`, {
                 headers: {
                     "Authorization": `Bearer ${user.token}`
                 }

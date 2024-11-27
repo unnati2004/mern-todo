@@ -2,6 +2,7 @@ import { useContext, useState } from "react"
 import AuthContext from "../context/AuthContext";
 
 const Login = () => {
+  const url = "https://expert-capybara-gv9gq754rx7hpgv-4000.app.github.dev";
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -12,7 +13,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("https://expert-capybara-gv9gq754rx7hpgv-4000.app.github.dev/api/users/login", {
+    const response = await fetch(`${url}/api/users/login`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
