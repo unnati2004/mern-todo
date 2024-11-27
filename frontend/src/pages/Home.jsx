@@ -10,7 +10,7 @@ function Home() {
     const {todos, dispatch} = useContext(TodosContext);
     const { dispatch: Authdispatch, user } = useContext(AuthContext);
 
-    const url = "https://expert-capybara-gv9gq754rx7hpgv-4000.app.github.dev";
+    const url = "https://mern-todo-sandy.vercel.app";
     useEffect(() => {
 
         const fetchTodos = async () => {

@@ -2,7 +2,7 @@ import { useContext, useState } from "react"
 import AuthContext from "../context/AuthContext";
 
 const Signup = () => {
-  const url = "https://expert-capybara-gv9gq754rx7hpgv-4000.app.github.dev";
+  const url = "https://mern-todo-sandy.vercel.app";
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [userName, setUserName] = useState("");
